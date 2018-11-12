@@ -1,0 +1,117 @@
+{
+  "key": "LatestUI",
+  "baseUrl": "https://419d1b80.ngrok.io",
+  "name": "UI Latest plugin", 
+  "authentication": {
+    "type": "jwt"
+  },
+  "lifecycle": {
+     "installed" : "/installed",
+    "uninstalled": "/uninstalled"
+  },
+   "scopes": ["READ", "WRITE", "ACT_AS_USER", "ADMIN", "PROJECT_ADMIN"],
+    "apiMigrations": {"gdpr": true },
+  "apiVersion": 1,
+  "modules": {
+  
+  
+  
+  
+ "adminPages": [
+      {
+        "url": "/cidiControl",
+        "name": {
+          "value": "My Admin Page1"
+        },
+        "key": "my-admin-page"
+      }
+    ],
+ "configurePage": {
+      "url": "/cidiControl",
+      "name": {
+        "value": "My Configure Page"
+      },
+      "key": "my-config-page"
+    },
+  
+  
+  
+ "webItems": [
+{
+"name": {
+"value": "SpaceX"
+}, 
+"location": "system.top.navigation.bar",
+"url": "/landingPage",
+"key": "jira-reports-dropdown",
+"conditions": [
+{
+"condition": "user_is_logged_in"
+}
+]
+}
+],
+"webSections": [
+{
+"name": {
+"value": "Project Management"
+},
+"location": "jira-reports-dropdown",
+"url": "/viewmetrics",
+"key": "jira-reports-section",
+"condition": {
+"condition": "user_is_logged_in"
+},
+"weight": 1
+}
+],
+"generalPages": [
+{
+"name": {
+"value": "Landing Page"
+},
+"url": "/landingPage",
+"key": "jira-landing",
+"location": "jira-reports-dropdown/jira-reports-section",
+"weight": 1
+},
+{
+"name": {
+"value": "Client Satisfaction"
+},
+"url": "/",
+"key": "jira-csat",
+"location": "jira-reports-dropdown/jira-reports-section",
+"weight": 2
+},
+{
+"name": {
+"value": "Delivery Management Effectiveness"
+},
+"url": "/monthlymetrics",
+"key": "jira-dme",
+"location": "jira-reports-dropdown/jira-reports-section",
+"weight": 3
+},
+
+{
+"name": {
+"value": "Development Effectivess"
+},
+"url": "/",
+"key": "jira-de",
+"location": "jira-reports-dropdown/jira-reports-section",
+"weight": 4
+},
+{
+"name": {
+"value": "Process Effectiveness"
+},
+"url": "/cSFAControlMethod",
+"key": "jira-client-complaints",
+"location": "jira-reports-dropdown/jira-reports-section",
+"weight": 5
+}
+]
+}
+ }
